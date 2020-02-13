@@ -1,26 +1,27 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+
+import Navtab from './components/uppertab.js'
+import addpost from './addpost';
+import React, { Component } from 'react'; 
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+import products from './products.js';
+import register from './register.js';
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <div>
+   
+   <Router>
+        <div>
+        <Navtab/>
+        
+        <Route exact path='/products' component={products}></Route> 
+        <Route exact path='/addpost' component={addpost}></Route> 
+        <Route exact path='/register' component={register}></Route> 
+        </div>
+   </Router>
+   </div>
   );
+  
 }
-
 export default App;
